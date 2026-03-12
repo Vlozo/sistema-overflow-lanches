@@ -27,12 +27,15 @@ class Config:
     if not ADMIN_PWD:
         raise value_not_definied("ADMIN_PWD")
     
+    CORS_ORIGINS = os.getenv("CORS_ORIGINS").split(",")
+    if not CORS_ORIGINS:
+        raise value_not_definied("CORS_ORIGINS")
+    
     JWT_TOKEN_LOCATION = ["headers", "cookies"]
     JWT_ACCESS_COOKIE_NAME = "access_token"
     JWT_SESSION_COOKIE = False
     JWT_COOKIE_HTTPONLY = True
 
-    # OPÇÃO A: Localhost sem HTTPS (Recomendado para Dev)
     JWT_COOKIE_SAMESITE = "Lax" 
     JWT_COOKIE_SECURE = False 
     JWT_TOKEN_LOCATION = ["cookies"]

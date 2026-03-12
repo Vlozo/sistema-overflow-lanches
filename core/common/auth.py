@@ -20,11 +20,9 @@ def view_require_permission():
     def decorator(f):
         @wraps(f)
         def wrapper(*args, **kwargs):
-            # Admin sempre passa
             if is_admin():
                 return f(*args, **kwargs)
 
-            # Pega a permissão da query string
             required_perm = request.args.get("permission")
             if not required_perm:
                 return http_error("Permissão não informada", 403)

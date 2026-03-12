@@ -11,7 +11,6 @@ def init_db():
         with open("core/schema.sql", "r") as f:
             conn.executescript(f.read())
         
-        # usuário admin inicial
         conn.execute("""
             INSERT INTO users (username, password_hash, isAdmin)
             VALUES (?, ?, ?)

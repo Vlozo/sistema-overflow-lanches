@@ -1,7 +1,6 @@
 from flask import request, jsonify
 from flask_jwt_extended import jwt_required, unset_jwt_cookies
 
-
 from .db_setup import init_db
 from . import app
 from .common.auth import get_identity, view_require_permission
@@ -12,8 +11,6 @@ from .models.permissions.routes import permissions_bp
 from .models.sales.routes import sales_bp
 
 DATABASE = app.config["DATABASE_URL"]
-
-
 init_db()
 
 app.register_blueprint(users_bp)
@@ -58,17 +55,6 @@ def logout():
     resp = jsonify({"message": "logout realizado"}) 
     unset_jwt_cookies(resp)
     return resp
-    
-# @app.route("/hello", methods=["GET"])
-# @jwt_required()
-# def helloWorld():
-#     user = get_jwt_identity()
-#     is_admin = get_jwt().get("is_admin", False)
-#     status = "verdadeiro" if is_admin else "falso"
-
-#     return jsonify({
-#         "message" : f"Bem-vindo {user["username"]}! seu estado de admin é: {status}"
-#     })
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

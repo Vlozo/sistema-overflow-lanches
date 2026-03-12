@@ -18,7 +18,6 @@ def register_sale(db, total, operator, discount, fee, change, dt=None):
 
 
 def get_sale_details(db, sale_id):
-    # Dados da venda + operador
     sale = db.execute("""
         SELECT s.id AS sale_id, s.total, s.datetime, s.discount, s.fees_applied, s.change, u.username AS operator
         FROM sales s
@@ -26,7 +25,6 @@ def get_sale_details(db, sale_id):
         WHERE s.id = ?
     """, (sale_id,)).fetchone()
 
-    # Itens vendidos
     items = db.execute("""
     SELECT p.product_name,
            ps.subtotal,
@@ -37,8 +35,6 @@ def get_sale_details(db, sale_id):
     WHERE ps.sale_id = ?
     """, (sale_id,)).fetchall()
 
-
-    # Pagamentos
     payments = db.execute("""
         SELECT method, value_paid
         FROM payments
@@ -63,4 +59,3 @@ def get_sales(db):
     """
     cursor = db.execute(sql)
     return cursor.fetchall()
-

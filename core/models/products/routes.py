@@ -36,18 +36,6 @@ def register_product():
     
     except InvalidFormatError as e:
         return http.bad_request(e)
-
-# @products_bp.route("/products", methods=["GET"])
-# @jwt_required()
-# @require_permission("create_products")
-# def get_products():
-#     try:
-#         with get_db() as db:
-#             products = select_all_from(db, "products")
-#             return jsonify([dict(row) for row in products])
-    
-#     except sqlite3.Error as e:
-#         return http.http_error(e)
     
 @products_bp.route("/products", methods=["GET"])
 @jwt_required()
@@ -103,7 +91,7 @@ def update_product(product_id):
     product = data.get("product")
     price = data.get("price")
     cost = data.get("cost")
-    code = data.get("code")  # ainda pode atualizar o código, mas não é chave
+    code = data.get("code")
 
     if not product:
         return http.bad_request("O campo 'product' é obrigatório")
@@ -116,7 +104,7 @@ def update_product(product_id):
             rows = repo.update_product(
                 db,
                 operator["id"],
-                product_id,   # referência principal
+                product_id,
                 product,
                 price,
                 code,
@@ -134,7 +122,6 @@ def update_product(product_id):
 
     except InvalidFormatError as e:
         return http.bad_request(str(e))
-
 
 @products_bp.route("/products/<int:product_id>", methods=["DELETE"])
 @jwt_required()

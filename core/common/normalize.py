@@ -28,7 +28,6 @@ def normalize_list_dict(list_entity, list_name, validation_logic = None, dict_fo
         if not callable(validation_logic):
             raise InvalidFormatError(NORMALIZE_ERROR_CODES["2"], f"Deve haver uma lógica de validação para a função.")
         
-        # deve retornar um objeto ex: {"id": 1, "quantity": 2}
         validated = validation_logic(data)
         if validated is None:
             raise InvalidFormatError(NORMALIZE_ERROR_CODES["3"], "A lista de itens não pode estar vazia")
@@ -43,19 +42,17 @@ def verify_lists(list_entity, list_name):
     if not isinstance(list_entity, list):
         raise InvalidFormatError(NORMALIZE_ERROR_CODES["1"], f"O campo '{list_name}' deve ser uma lista")
 
-
 def parse_js_date(date_str: str) -> date | None:
     if not date_str or date_str.strip() == "":
         return None
-
-    # Tenta alguns formatos comuns de JS (ISO 8601, apenas data, etc.)
+    
     formats = [
-        "%Y-%m-%d",                # só data
-        "%Y-%m-%dT%H:%M",          # data + hora sem segundos
-        "%Y-%m-%dT%H:%M:%S",       # data + hora com segundos
-        "%Y-%m-%dT%H:%M:%S.%fZ",   # ISO com milissegundos e Z
-        "%Y-%m-%dT%H:%M:%S%z",     # ISO com timezone
-        "%Y-%m-%dT%H:%M:%S.%f%z",  # ISO com milissegundos + timezone
+        "%Y-%m-%d",
+        "%Y-%m-%dT%H:%M",
+        "%Y-%m-%dT%H:%M:%S",
+        "%Y-%m-%dT%H:%M:%S.%fZ",
+        "%Y-%m-%dT%H:%M:%S%z",
+        "%Y-%m-%dT%H:%M:%S.%f%z",
     ]
 
     for fmt in formats:
@@ -65,7 +62,6 @@ def parse_js_date(date_str: str) -> date | None:
             continue
 
     raise ValueError(f"Formato de data inválido: {date_str}")
-
 
 def parse_money(value):
     if isinstance(value, str):
@@ -78,31 +74,6 @@ def parse_money(value):
         return dec
     except Exception:
         raise InvalidFormatError(NORMALIZE_ERROR_CODES["1"], "Valor inválido para o campo monetário")
-    
-
-def normalize_items(items, field="items"):
-    verify_lists(items, field)
-
-    normalized = []
-    for item in items:
-        if not isinstance(item, dict):
-            raise InvalidFormatError(NORMALIZE_ERROR_CODES["1"], "Cada item deve ser um objeto {id, quantity}")
-
-        try:
-            product_id = int(item.get("id"))
-            quantity = int(item.get("quantity"))
-        except (ValueError, TypeError):
-            raise InvalidFormatError(NORMALIZE_ERROR_CODES["1"], "Campos 'id' e 'quantity' devem ser inteiros")
-
-        if quantity <= 0:
-            raise InvalidFormatError(NORMALIZE_ERROR_CODES["4"], "Quantidade deve ser maior que zero")
-
-        normalized.append({"id": product_id, "quantity": quantity})
-
-    if not normalized:
-        raise InvalidFormatError(NORMALIZE_ERROR_CODES["3"], "A lista de itens não pode estar vazia")
-
-    return normalized
 
 def new_normalize_items(items):
     def validate_items(item):
