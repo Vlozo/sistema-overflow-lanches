@@ -1,0 +1,295 @@
+
+
+.modal__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal__content {
+  background: #fff;
+  border-radius: 8px;
+  width: 500px;
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  border-collapse: collapse;
+  overflow-y: auto;
+}
+
+.modal__header, .modal__footer {
+  padding: 12px;
+}
+
+.modal__body {
+  padding: 16px;
+  border-collapse: collapse;
+}
+
+.modal__close {
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  float: right;
+}
+
+.login__fields {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-self: center;
+}
+
+.login__button {
+    width: 100%;
+}
+
+.navbar__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.navbar__screen__overlay {
+    background-color: black;
+    opacity: 50%;
+    position: fixed;
+    min-height: 100dvh;
+    width: 100%;
+    z-index: 999;
+    height: 100%;
+}
+
+.navbar__button {
+    position: fixed;
+    min-width: 60px;
+    min-height: 40px;
+
+    bottom: 6rem;
+    right: 1.5rem;
+    z-index: 999;
+    padding: 1.2rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    font-size: large;
+
+    position: fixed;
+    background-color: black;
+    opacity: 90%;
+    color: white;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+}
+
+.navbar__button:hover {
+    background-color: orangered;
+}
+
+.navbar__menu {
+    background-color: black;
+    align-self: baseline;
+    z-index: 999;
+    position: fixed;
+    height: 100%;
+    min-height: 100dvh;
+    width: 70vw;
+    padding: 2rem 2rem 0rem 2rem;
+}
+
+.navbar__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    font-size: large;
+    text-decoration: none;
+}
+
+.navbar__item {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar__item:hover {
+    color: skyblue;
+    text-decoration: underline;
+}
+
+
+.navbar__close__button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+}
+.loginSection {
+    margin-top: 35%;
+    background-color: var(--main-bg);
+}
+
+.pagination__wrapper {
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overscroll-behavior-x: contain;
+}
+
+/* O "Trem" (A Tabela) */
+.pagination__table table{
+    width: 100%;
+    min-width: 900px; /* Garante que a tabela seja larga o suficiente para rolar em telas pequenas */
+    border-collapse: collapse;
+}
+
+/* Opcional: impede que o texto quebre linha e "esprema" a tabela */
+.pagination__table td, 
+.pagination__table th {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    white-space: nowrap;
+}
+
+.row-form {
+    display: flex;
+    flex-direction: column;
+    font-size: medium;
+}
+
+.row-form__field__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.row-form__field input{
+    font-size: medium;
+}
+
+.saleform__items__section {
+    padding: 1rem;
+    background-color: white;
+}
+
+.saleform__items__container {
+    max-height: 250px;   /* altura máxima da área */
+    overflow-y: auto;    /* ativa a rolagem vertical */
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.saleform__items__item {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr 1fr; 
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.saleform__items__item input {
+    min-width: 50px;
+    height: 40px;
+    text-align: center;
+}
+
+.saleform__items__item__delete {
+    padding: 8px;
+}
+
+.saleform__sale__props {
+    display: flex;
+    flex-direction: column;
+}
+
+.saleform__sale__discount {
+    display: flex;
+    flex-direction: column;
+}
+
+.saleform__sale__retrodate {
+    display: flex;
+    flex-direction: column;   
+}
+
+.saleform__sale__discount input {
+    padding: 10px;
+}
+
+.salepage__sale__summary ul, .sale-details ul{
+    list-style: none;
+}
+
+.sale-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.table__container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overscroll-behavior-x: contain;
+}
+
+/* O "Trem" (A Tabela) */
+.table__content{
+    width: 100%;
+    min-width: 900px; /* Garante que a tabela seja larga o suficiente para rolar em telas pequenas */
+    border-collapse: collapse;
+}
+
+/* Opcional: impede que o texto quebre linha e "esprema" a tabela */
+.table__content td, 
+.table__content th {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    white-space: nowrap;
+}
+
+
+
+
+/* Styles for tablets and larger screens */
+@media (min-width: 620px) {
+    .loginSection {
+        margin-top: 10%;
+    }
+
+
+    .navbar__menu {
+        width: 35vw;
+    }
+}
+
+/* Styles for desktops and larger devices */
+@media (min-width: 1024px) {
+    .loginSection {
+        margin-top: 10%;
+    }
+
+    .login__fields {
+        width: 50%;
+    }
+
+    .login__button {
+        width: 50%;
+    }
+
+    .navbar__menu {
+        width: 25vw;
+    }
+}

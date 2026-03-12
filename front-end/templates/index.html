@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overflow Lanches</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/elements.css')}}">
+  <script> window.APP_CONFIG = { apiUrl: "{{ api_url }}" } </script>
+  <script src="{{ url_for('static', filename='libs/vue.global.js') }}"></script>
+  <script src="{{ url_for('static', filename='libs/vue-router.global.js') }}"></script>
+  <script src="{{ url_for('static', filename='libs/axios.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='scripts/AuthStore.js') }}" defer></script>
+  <script type="module" src="{{ url_for('static', filename='scripts/app.js') }}" defer></script>
+
+</head>
+<body>
+  <div id="app" class="h-100">
+    <router-view></router-view>
+  </div>
+</body>
+</html>
