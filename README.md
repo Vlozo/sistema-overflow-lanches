@@ -2,7 +2,7 @@
 
 Esse sistema está sendo desenvolvido amigavelmente para a galera da "Overflow Lanches" com objetivo de fornecer uma ferramenta que auxilie na gestão lógica do negócio e no gerenciamento do fluxo de vendas. Este repositório é público como um laboratório fullstack a fim de aprimorar o meu entendimento no desenvolvimento de sistemas sem fazer o uso de um framework robusto como o Django, e tendo de lidar mais diretamente com configurações e ambientes.
 
-O projeto utiliza duas app Flask, uma no back-end que fornece a API do sistema e outra como servidor web, hosteando o front-end que é uma SPA utilizando Vue e Axios self-hosted. A ideia é tentar manter o ambiente de desenvolvimento simples mas também permitir que ele possa ser escálavel a longo prazo.
+O projeto utiliza duas app Flask, uma no back-end que fornece a API do sistema, e outra como servidor web hosteando o front-end que é uma SPA utilizando Vue e Axios self-hosted. A ideia é tentar manter o ambiente de desenvolvimento simples mas também permitir que ele possa ser escálavel a longo prazo.
 
 Também estou utilizando sqlite por pragmatismo; seguindo o objetivo de um MVP, e dado o menor escopo do projeto, é mais fácil não ter de lidar com configurações de um banco de dados robusto. Entretanto, o espaço para migração é sempre aberto caso seja necessário.
 
