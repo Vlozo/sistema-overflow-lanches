@@ -51,7 +51,7 @@ CREATE TABLE payments (
     method VARCHAR NOT NULL,
     value_paid VARCHAR NOT NULL,
     FOREIGN KEY (sale_id) REFERENCES sales (id)
-)
+);
 
 CREATE TABLE role (
 	id INTEGER PRIMARY KEY,
