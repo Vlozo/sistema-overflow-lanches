@@ -12,7 +12,6 @@ export default {
   },
   methods: {
     close() {
-      // Se a função onClose existir, executa ela
       if (this.onClose) {
         this.onClose();
       }

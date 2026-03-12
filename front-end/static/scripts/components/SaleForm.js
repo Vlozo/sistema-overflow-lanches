@@ -173,7 +173,6 @@ export default {
       this.discountValue = 0;
     },
     autoComplete() {
-      // tudo em centavos
       const toCents = (val) => Math.round(parseFloat(val) * 100);
 
       const dueAmountCents = toCents(this.dueAmount);

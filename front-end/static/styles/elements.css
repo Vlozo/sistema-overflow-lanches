@@ -145,14 +145,13 @@
     overscroll-behavior-x: contain;
 }
 
-/* O "Trem" (A Tabela) */
 .pagination__table table{
     width: 100%;
-    min-width: 900px; /* Garante que a tabela seja larga o suficiente para rolar em telas pequenas */
+    min-width: 900px;
     border-collapse: collapse;
 }
 
-/* Opcional: impede que o texto quebre linha e "esprema" a tabela */
+
 .pagination__table td, 
 .pagination__table th {
     padding: 12px 16px;
@@ -183,8 +182,8 @@
 }
 
 .saleform__items__container {
-    max-height: 250px;   /* altura máxima da área */
-    overflow-y: auto;    /* ativa a rolagem vertical */
+    max-height: 250px;
+    overflow-y: auto;
     border: 1px solid #ddd;
     padding: 8px;
 }
@@ -244,14 +243,12 @@
     overscroll-behavior-x: contain;
 }
 
-/* O "Trem" (A Tabela) */
 .table__content{
     width: 100%;
-    min-width: 900px; /* Garante que a tabela seja larga o suficiente para rolar em telas pequenas */
+    min-width: 900px;
     border-collapse: collapse;
 }
 
-/* Opcional: impede que o texto quebre linha e "esprema" a tabela */
 .table__content td, 
 .table__content th {
     padding: 12px 16px;
@@ -260,10 +257,6 @@
     white-space: nowrap;
 }
 
-
-
-
-/* Styles for tablets and larger screens */
 @media (min-width: 620px) {
     .loginSection {
         margin-top: 10%;
@@ -275,7 +268,6 @@
     }
 }
 
-/* Styles for desktops and larger devices */
 @media (min-width: 1024px) {
     .loginSection {
         margin-top: 10%;

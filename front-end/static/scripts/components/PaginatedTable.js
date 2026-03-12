@@ -22,7 +22,7 @@ export default {
       currentPage: 1,
       totalPages: 1,
       search: "",
-      selectedRowId: null, // controla a linha selecionada
+      selectedRowId: null,
     };
   },
   methods: {
@@ -63,28 +63,12 @@ export default {
       this.fetchData(); 
     },
     selectRow(row) {
-      this.selectedRowId = row.id; // marca a linha
+      this.selectedRowId = row.id;
       this.$emit("row-selected", row);
     },
     cancelSelection() {
-      this.selectedRowId = null; // remove destaque
+      this.selectedRowId = null;
       this.$emit("cancel-selection");
-    },
-    mockData() {
-      fetch(`${window.location.origin}/static/scripts/components/lazymock.json`)
-        .then(response => response.json())
-        .then(data => {
-          if (data.rows && data.totalPages) {
-            this.data = data.rows;
-            this.totalPages = data.totalPages;
-          } else {
-            this.data = data;
-            this.totalPages = Math.ceil(this.data.length / this.perPage);
-          }
-        })
-        .catch(error => {
-          console.error("Erro ao buscar mock:", error);
-        });
     },
     normalizeMoneyFields(rows) {
       return rows.map(row => {
@@ -108,7 +92,6 @@ export default {
   },
   mounted() {
     this.fetchData();
-    //this.mockData();
   },
   template: `
     <div>

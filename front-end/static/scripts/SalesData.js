@@ -2,7 +2,6 @@ import PaginatedTable from "./components/PaginatedTable.js";
 import Navbar from "./components/Navbar.js";
 import Modal from "./components/Modal.js"
 
-
 export default {
     components: { PaginatedTable, Navbar, Modal},
     data() {

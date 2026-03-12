@@ -28,7 +28,7 @@ window.AuthStore = {
   async doLogin(username, password) {
     const res = await axios.post("/login", { username, password }, { withCredentials: true })
     sessionStorage.setItem("profile_token", res.data.profile_token)
-    this.isProfileTokenValid() // atualiza estado
+    this.isProfileTokenValid()
   },
 
   async doLogout() {

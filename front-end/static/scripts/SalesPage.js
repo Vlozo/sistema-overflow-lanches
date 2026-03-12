@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar.js";
 import SaleForm from "./components/SaleForm.js";
 import Modal from "./components/Modal.js";
 
-
 const productAliases = {
   id: "ID",
   code: "Código",
@@ -47,7 +46,7 @@ export default{
         };
       },
     methods: {
-      addToCart(product) { // chama o método do carrinho 
+      addToCart(product) {
       this.$refs.cart.addToCart(product);
       },
       handleCancel() {
@@ -128,11 +127,3 @@ export default{
     </main>
   `
 }
-
-// Precisa obter dados de produtos para o campo selecionável.
-// Produtos calculam seu subtotal dinamicamente ao obter (quantidade * preco), mas o que é enviado na requisição é item e quantidade
-// Um campo extensivo de enum com formas de pagamento que salva as formas como "Pix", "Pix, Dinheiro", "Crédito, Dinheiro"
-// Campo que mostra o total da venda.
-
-// Visualização da venda feita deve mostrar: Dados da venda + Itens vendidos.
-// Só pessoas com permissão podem ver os dados de todas as vendas feitas.

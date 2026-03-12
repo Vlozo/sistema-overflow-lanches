@@ -40,7 +40,7 @@ export default {
   methods: {
     async save() {
       try {
-        await this.onSave(this.form); // se der erro, cai no catch
+        await this.onSave(this.form);
         this.statusMessage = "Registro salvo com sucesso!";
         this.statusType = "success";
       } catch (err) {

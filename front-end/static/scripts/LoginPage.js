@@ -28,7 +28,7 @@ export default {
       try {
         await window.AuthStore.doLogin(this.user, this.pass)
         alert("Login realizado com sucesso!")
-        this.$router.push("/") // redireciona para rota protegida
+        this.$router.push("/")
       } catch (err) {
         alert("Falha no login")
       }

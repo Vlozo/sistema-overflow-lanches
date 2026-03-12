@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       selectedRow: null,
-      fields: ["code", "product", "price", "cost"], // campos dinâmicos
+      fields: ["code", "product", "price", "cost"],
       productAliases: productAliases,
       statusMessage: "",
       statusType: "",

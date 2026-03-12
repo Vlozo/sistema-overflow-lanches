@@ -1,4 +1,3 @@
-// scripts/NavBar.js
 export default {
   data(){
     return {
