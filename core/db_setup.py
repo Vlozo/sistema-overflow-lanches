@@ -8,18 +8,20 @@ DATABASE = Config.DATABASE_URL
 def init_db():
     if not os.path.exists(DATABASE):
         conn = sqlite3.connect(DATABASE)
-        with open("core/schema.sql", "r") as f:
+        base_dir = os.path.dirname(__file__)
+        schema_path = os.path.join(base_dir, "schema.sql")
+        
+        with open(schema_path, "r") as f:
             conn.executescript(f.read())
         
         conn.execute("""
             INSERT INTO users (username, password_hash, isAdmin)
             VALUES (?, ?, ?)
         """, ("admin", hash_password(Config.ADMIN_PWD), 1))
-
-        set_permissions()
-
+        
         conn.commit()
         conn.close()
+        set_permissions()
 
 def set_permissions():
     conn = sqlite3.connect(DATABASE)
