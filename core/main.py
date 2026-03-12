@@ -1,4 +1,4 @@
-from flask import request, jsonify
+from flask import jsonify
 from flask_jwt_extended import jwt_required, unset_jwt_cookies
 
 from .db_setup import init_db

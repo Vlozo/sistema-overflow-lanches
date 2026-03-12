@@ -25,6 +25,8 @@ A quem interessar a contribuição é livre, ficarei feliz em receber feedbacks 
 
 ## Próximos Passos
 
+- Revisar a arquitetura da API para se adequar ao padrão REST; 
+- Documentar a API;
 - Refatorar código;
 - Adicionar views para gerenciamento de usuários, cargos e permissões;
 - Melhorar a interface geral do sistema aplicando apropriadamente conhecimentos de UI e UX;
