@@ -30,6 +30,7 @@ CREATE TABLE sales (
     total REAL NOT NULL,
     discount REAL NOT NULL,
     fees_applied REAL NOT NULL,
+	change REAL NOT NULL,
     datetime TEXT NOT NULL,
     operator_id INTEGER NOT NULL,
     FOREIGN KEY (operator_id) REFERENCES users (id)
